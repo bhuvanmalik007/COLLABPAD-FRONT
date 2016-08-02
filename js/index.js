@@ -1,13 +1,6 @@
-var socket= io.connect('https://collabpad-server.bhuvanmalik007.c9users.io/');
-    socket.on('flashget' , function(data){
+var socket= io.connect('http://localhost:3000');
 
-      this.textarea=data;
-
-
-    });
-
-
-new Vue({
+var vm =new Vue({
 el: 'body',
   data: {
 
@@ -15,23 +8,25 @@ el: 'body',
 
 
   },
-  ready:{
-    
+  ready:function(){
+    socket.on('flashget' , function(data){
+
+      vm.textarea=data;
 
 
+    });
+},
 
-
-  },
   methods:{
     send: function(event){
 
 
 
-      socket.emit('flashsend',this.textarea);
+      socket.emit('flashsend',vm.textarea);
 
 
 
-     console.log(this.textarea);
+     console.log(vm.textarea);
 
     }
 
