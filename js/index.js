@@ -1,4 +1,11 @@
-var socket=io.connect();
+var socket= io.connect('https://collabpad-server.bhuvanmalik007.c9users.io/');
+    socket.on('flashget' , function(data){
+
+      this.textarea=data;
+
+
+    });
+
 
 new Vue({
 el: 'body',
@@ -9,13 +16,8 @@ el: 'body',
 
   },
   ready:{
+    
 
-    socket.on('flashget',function(data){
-
-      this.textarea=data;
-
-
-    });
 
 
 
@@ -29,9 +31,9 @@ el: 'body',
 
 
 
-      //console.log(this.textarea);
+     console.log(this.textarea);
 
-    },
+    }
 
 
 
