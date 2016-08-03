@@ -1,4 +1,4 @@
-var socket= io.connect('http://collabpad-server-bhuvanmalik007.c9users.io/');
+var socket= io.connect('http://localhost:3000');
 
 var vm =new Vue({
 el: 'body',
@@ -26,12 +26,12 @@ el: 'body',
      console.log(vm.textarea);
 
     },
-    
+
     sendroom: function(event){
-      
+
       socket.emit('getroom',vm.roomname);
-      
-      
+
+
     }
 
 
