@@ -27,7 +27,8 @@ el: 'body',
 
     },
     
-    sendroom: function(){
+    sendroom: function(event){
+      
       socket.emit('getroom',vm.roomname);
       
       
