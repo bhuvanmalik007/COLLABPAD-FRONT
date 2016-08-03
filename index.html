@@ -86,6 +86,9 @@
       <div class="form-group">
         <label for="comment">Your pad:</label>
         <textarea class="form-control" rows="10" id="comment" v-on:keyup="send" v-model="textarea"></textarea>
+        <br>
+        <input class="form-control" id="inputdefault" type="text" v-model='roomname'>
+        <button type="button" class="btn btn-primary" v-on:click="sendroom">GO</button>
       </div>
 </div>
     <!-- /.container -->

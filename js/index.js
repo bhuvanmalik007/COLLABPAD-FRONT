@@ -1,10 +1,11 @@
-var socket= io.connect('http://localhost:3000');
+var socket= io.connect('http://collabpad-server-bhuvanmalik007.c9users.io/');
 
 var vm =new Vue({
 el: 'body',
   data: {
 
     textarea:'',
+    roomname:''
 
 
   },
@@ -20,14 +21,16 @@ el: 'body',
   methods:{
     send: function(event){
 
-
-
       socket.emit('flashsend',vm.textarea);
-
-
 
      console.log(vm.textarea);
 
+    },
+    
+    sendroom: function(){
+      socket.emit('getroom',vm.roomname);
+      
+      
     }
 
 
