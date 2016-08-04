@@ -1,4 +1,6 @@
-var socket= io.connect('http://localhost:3000');
+/*global io*/
+/*global Vue*/
+var socket= io.connect('collabpad-server-bhuvanmalik007.c9users.io/');
 
 var vm =new Vue({
 el: 'body',
